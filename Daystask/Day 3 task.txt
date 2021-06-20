@@ -1,0 +1,15 @@
+What is method?
+
+the moethod is block of code which only runs when it is called.you can pass data which is known as a
+parameters into a method.methods are used to perfo some certain actions.a method must be declared with in the class.
+
+Syntax of Method:
+
+modifier access  return type  method name (arguments);
+
+
+
+Constructor: a constructor in java is a block of code which is executed when an instance of class is to
+be created.it is used for initializing the instance variables in data.
+
+default constructor is no argument constructor which is invoked when creting an instance of the class.

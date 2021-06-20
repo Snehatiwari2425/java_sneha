@@ -1,0 +1,122 @@
+
+
+1.Java I/O Fundamentals
+2. Read and write data from the console
+3. Use BufferedReader, BufferedWriter, File, FileReader, FileWriter, FileInputStream, 
+   FileOutputStream, ObjectOutputStream, ObjectInputStream, and PrintWriter in the java.io package.
+4. Java File I/O (NIO.2)
+ 
+
+
+
+
+5.  Use Path interface to operate on file and directory paths
+6.  Use Files class to check, read, delete, copy, move, manage metadata of a file or
+    directory
+7. ""Building Database Applications with JDBC
+8.  Describe the interfaces that make up the core of the JDBC API including the 
+    Driver, Connection, Statement, and ResultSet interfaces and their relationship
+    to provider implementations
+9.  Identify the components required to connect to a database using the 
+    DriverManager class including the JDBC URL
+0.  Submit queries and read results from the database including creating statements,
+    returning result sets, iterating through the results, and properly closing result sets, statements, 
+   and connections"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+type of streams:
+
+depending on the type of operation:
+a.output stream:it is used to write data to the desitnation.it may be file , an array and any other devices.
+b.input stream:-it is used to read data from a source .
+
+depending on the type of files
+a.byte stream
+b.charcter stream
+
+
+Output stream class:it is an abstract class.it is the super class of all classes 
+ representing an output stream of bytes.
+
+public void write(int):uesd to write a byte to the current ouptut stream.
+public void write(byte[])
+public void flush():flushes the current output stream.
+public void close():close the current output stream.
+
+output stream hierarchy:
+
+file output stream
+byte array output stream
+piped output stream 
+object output stream
+filter ouput stream
+a.data output stream
+b.buffered ouput stream
+c.print stream
+
+
+java NIO:
+
+java nio was introduced from jdk 4.it is used to implement high speed io opeartions.
+it is basically best for file handling.it provides a different way of wroking with i.o than the standard io.
+java.nio.package defines the buffer class. which are used throughout nio apis.
+we use it for two reasons.
+
+1.non blocking io opeartion:
+
+2.buffer oriented approach:it allows us to move forth and back into the buffer
+whenever need.the data is read into a buffer and cached there.whenever data is required,it is 
+further processes from th buffer.
+
+
+java NIO components:
+
+the core components are used in reding and writing is
+a.channel
+b.buffer
+c.selector
+
+it has more components bu these are the core of api.
+
+Channels and Buffer:
+in standard io api we are used charcter stream an byte stream.but in NIO we used channels and buffer.
+all the io in NIO is started with channel.data is always written from buffer to channel.and always read from channel to buffer.
+
+Channel: it is a medium that is used to transpoart data efficiently between the enity and byte buffer.
+channel have one to one relationship with opearting system.
+
+PRIMARY CHANNEL:
+
+1.filechannel:used to read data from the files.we can't create object of filechannel
+directly.we create by calling getChannel().
+
+2.DatagramChannel:it is used to both write and read over the netwok by UDP.
+
+3.SocketChannel:it is used to btoh write and read over the network via TCp.
+
+
+
+
+
+TYPES OF PATH:
+
+1.ABSOLUTE PATH:it contins the full path from the root of the file system to the enity.
+
+2.RELATIVE PATH:contains the path to file or directory relative to some other path.

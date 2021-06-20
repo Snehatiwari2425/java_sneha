@@ -1,0 +1,276 @@
+JSP:
+
+JSP technology is used to create web application just like Servlet technology. 
+It can be thought of as an extension to Servlet because it provides more functionality than servlet such as expression language, JSTL, etc.
+A JSP page consists of HTML tags and JSP tags. The JSP pages are easier to maintain than Servlet because we can separate designing and development. 
+It provides some additional features such as Expression Language, Custom Tags, etc.
+
+Advantage of JSP:
+
+1) Extension to Servlet:-
+JSP technology is the extension to Servlet technology.
+We can use all the features of the Servlet in JSP. In addition to, we can use implicit objects, 
+predefined tags, expression language and Custom tags in JSP, that makes JSP development easy.
+
+2) Easy to maintain:-
+JSP can be easily managed because we can easily separate our business logic with presentation logic.
+In Servlet technology, we mix our business logic with the presentation logic.
+
+3) Fast Development: 
+No need to recompile and redeploy
+If JSP page is modified, we don't need to recompile and redeploy the project.
+The Servlet code needs to be updated and recompiled if we have to change the look and feel of the application.
+
+4) Less code than Servlet
+In JSP, we can use many tags such as action tags, JSTL, custom tags, etc. that reduces the code. Moreover, we can use EL, implicit objects, etc.
+
+
+
+The Lifecycle of a JSP Page:-
+
+The JSP pages follow these phases:
+
+Translation of JSP Page
+Compilation of JSP Page
+Classloading (the classloader loads class file)
+Instantiation (Object of the Generated Servlet is created).
+Initialization ( the container invokes jspInit() method).
+Request processing ( the container invokes _jspService() method).
+
+
+
+JSP Scriptlet tag (Scripting elements):-
+----------------------------------------------->
+
+In JSP, java code can be written inside the jsp page using the scriptlet tag.
+ Let's see what are the scripting elements first.
+
+JSP Scripting elements:-
+The scripting elements provides the ability to insert java code inside the jsp. 
+There are three types of scripting elements:
+
+1. scriptlet tag: it is used to write the java code inside the jsp file
+
+2. expression tag: it is used to print the statement.
+
+3. declaration tag:-- The JSP declaration tag is used to declare fields and methods.
+                      The code written inside the jsp declaration tag is placed outside the service() 
+                       method of auto generated servlet.
+
+So it doesn't get memory at each request.
+
+
+Syntax of SCRIPTLET TAG:-
+
+<% %> between percentile we write our java code.
+
+Syntax of EXPRESSION TAG:
+
+<%= %>  this is used to print statement becuase of this we have not to write out.print statement.
+
+
+Syntax of DECLEARTAION TAG:
+
+<%!  field or method declaration %>  
+
+
+Jsp Scriptlet Tag	Jsp Declaration Tag
+
+1.The jsp scriptlet tag can only declare variables not methods.    	1.The jsp declaration tag can declare variables as well as methods.
+2.The declaration of scriptlet tag is placed inside
+the _jspService() method.	                                   2.     The declaration of jsp declaration tag is placed outside the _jspService() method.
+
+
+
+
+JSP IMPLICIT OBJECT:
+
+these are created during the translation phase of jsp to servlet.these objects are directly used in scriplet goes into service method.
+they are created by the container and access using objects.
+
+HOW MANY IMPLICIT OBJECTS ARE AVAILABLE IN JSP?:-
+
+there are 9 implicit objects available in the container.
+1.out
+2.request
+3.response
+4.config
+5.application
+6.session
+7.pageContext
+8.exception
+9.page
+
+1.OUT: it is used to write data into the buffer and send the output to the client in respon se.
+       it allows us to access outputstream of servlet.
+       out is the object of  javax.servlet.jsp.jspWriter class 
+       while working with servlet we need printWriter object.
+
+2.REQUEST: it is the object of the javax.servlet.http.HttpServletRequest and it is one of the argument of service method.
+           it is used to request the information like parameter,header information,server name etc.
+           it uses the getParameter() to access the request parameter.
+
+3.RESPONSE: response is an implicit object of type HttpServletResponse. 
+            the instance of HttpServletResponse is created by the web container for each jsp request.
+            It can be used to add or manipulate response such as redirect response to another resource, send error etc.
+
+4.CONFIG:In JSP, config is an implicit object of type ServletConfig. 
+        This object can be used to get initialization parameter for a particular JSP page
+
+.
+5.APPLLICATION:application is an implicit object of type ServletContext.
+               This object can be used to get initialization parameter from configuaration file (web.xml). 
+               It can also be used to get, set or remove attribute from the application scope.
+
+6.SESSION:  session is an implicit object of type HttpSession.
+           The Java developer can use this object to set,get or remove attribute or to get session information.
+
+7. pageContext:pageContext is an implicit object of type PageContext class.The pageContext object can be used to set,get or remove attribute from one of the following scopes:
+page
+request
+session
+application
+In JSP, page scope is the default scope.
+
+8.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JSP directives:-
+--------------------->
+
+The jsp directives are messages that tells the web container how to translate a JSP page into the corresponding servlet.
+
+There are three types of directives:
+
+page directive
+include directive
+taglib directive
+
+
+Syntax of JSP Directive:-
+
+<%@ directive attribute="value" %>  
+
+
+Attributes of JSP page directive:----->
+
+1.import:it is used just like in java
+
+2.contentType:The contentType attribute defines the MIME(Multipurpose Internet Mail Extension) type of the HTTP response.The default value is "text/html;charset=ISO-8859-1".
+
+3.extends:it is rarely used and it is same as in java.
+
+4.info: This attribute simply sets the information of the JSP page which is retrieved later by using getServletInfo() method of Servlet interface.
+
+5.buffer:The buffer attribute sets the buffer size in kilobytes to handle output generated by the JSP page.The default size of the buffer is 8Kb.
+
+6.language: The language attribute specifies the scripting language used in the JSP page. The default value is "java".
+
+7.isELIgnored:We can ignore the Expression Language (EL) in jsp by the isELIgnored attribute. By default its value is false i.e.
+ Expression Language is enabled by default. We see Expression Language later.
+
+8.isThreadSafe: Servlet and JSP both are multithreaded.If you want to control this behaviour of JSP page, you can use isThreadSafe attribute of page directive.The value of isThreadSafe value is true.If you make it false, the web container will serialize the multiple requests, i.e. it will wait until the JSP finishes responding to a request before passing another request to it.
+If you make the value of isThreadSafe attribute like:
+
+9.autoFlush: it specifies that the buffered output should be flush automatically or not and defult value of this attribut is true.
+             if the vale is set to false the buffer will not flush automatically and if buffer is full ,we will get an exception.
+
+10.session: jsp page creates session by default. if you do not want to create a session you assign the value of this attribut is false.
+11.pageEncoding
+
+
+12. errorPage:The errorPage attribute is used to define the error page, if exception occurs in the current page, it will be redirected to the error page.
+13. isErrorPage:The isErrorPage attribute is used to declare that the current page is the error page.
+
+
+
+
+
+Jsp Include Directive:->
+
+The include directive is used to include the contents of any resource it may be jsp file, html file or text file. The include directive includes the original content of the included resource at page translation time (the jsp page is translated only once so it will be better to include static resource).
+
+Advantage of Include directive:-->
+1.Code Reusability
+
+Syntax of include directive:-
+<%@ include file="resourceName" %>  
+
+
+
+
+Exception Handling in JSP:-->
+
+The exception is normally an object that is thrown at runtime. Exception Handling is the process to handle the runtime errors. There may occur exception any time in your web application. So handling exceptions is a safer side for the web developer. In JSP, there are two ways to perform exception handling:
+
+1.By errorPage and isErrorPage attributes of page directive
+2.By <error-page> element in web.xml file
+
+
+ACTION ELEMENTS: it is the action tags that is used to perform some specific task.
+                 The action tags are used to control the flow between pages and to use Java Bean
+------------------>
+
+1.forward
+2.include
+3.java bean class
+4.useBean
+5.set and get properity
+6.displaying applet in jsp
+
+
+
+FORWARD :this tag is used to forward a request to another resource it may be js,html etc.
+
+Syntax
+< jsp:forward page="relative url | <%= expression%>">
+
+
+
+JAVA BEAN::- A JavaBean is a Java class.
+             It should have a no-arg constructor.
+             It should be Serializable.
+             It should provide methods to set and get the values of the properties, known as getter and setter methods.
+
+
+WHY USE JAVA BEAN:->
+----------------------->
+it is used beacuse it is a reusable software component.
+A bean encapsulates many objects into one object so that we can access this object from multiple places. Moreover, it provides easy maintenance.
+
+
+
+JSTL(JSP STANDARD TAG LIBRARY):it is a tag library using it you can create tag.it is used to perfom sprecific task
+ther are 5 tags:
+a.core tag:it has 15 tag.it provides variable support.
+b.function tag: it has 15 tag basically using to manipulate the string.
+c.formatting tag: it provides support for message,number and date formatting.
+d.xml tag:it is used to manipulating and creating xml document.
+e.sql tag
+
+
+
+PAGINATION IN JAVA:
+if you want to display many records and we know many records in a sinlge page may take time so it is better
+divide page into the parts ador this we required pagination in jsp. 
+
+
+

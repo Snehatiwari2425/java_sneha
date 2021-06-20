@@ -1,0 +1,197 @@
+
+
+Multithreading
+Inner Classes
+Enums
+Generics and Collections
+Create and use a generic class
+Create and use ArrayList, TreeSet, TreeMap, and ArrayDeque objects
+Use java.util.Comparator and java.lang.Comparable interfaces
+Collections Streams and Filters
+Iterate using forEach methods of Streams and List
+Describe Stream interface and Stream pipeline
+Filter a collection by using lambda expressions
+Use method references with Streams
+
+
+
+
+
+
+What is multithreading?
+
+multithreading is a process which allows simultaneously execution of mutiple threads.
+multithreading and multiprocessing both are used to achieve multitasking.
+we use multithreading instead of multiprocessing because thread use a shared areas of memory.so they save memory.
+and context switching between thread take less ime than the process.
+java multithreadig mostly used in games,animations etc.
+
+
+Advantage:
+it does not block the user threads are independent and you can perform multiple operation at the same time.
+
+Thread:
+thread is a light weight process which is the small unit of the processing.if the exception occurs in
+one thread so it does not affect to another thread.
+
+Life Cycle of Thread:
+
+the life cycle of the thread in java is controlled by the JVM. a thread can be one of the five states.
+
+1. New:when we create an object of the thread class then thread comes in new state an it stys here until start() is not invoked.
+
+2.Runnable:when we invoked the start() then the thread comes from the new state to runnable state and it stsy here until
+thread schedular will not select it to the running method.
+
+3.Running:the thread comes in running state when a thread schedular select it.
+
+4.Blocked:this state when the thread is alive but is currently not eilgible to run.
+
+5.Terminated:a thred is in terminated or dead state when its run() exits.
+
+
+How To Create Thread:
+
+ther are two ways to create a thread:
+1.by extending the thread class
+2.by implementing the runnable interface
+
+Thread Class: it is class which provides constructor ,methods to create and perform operation on a thread.
+Thread class extends the object class and implements the runnable interface.
+
+Commonly used Constructors of Thread class:
+Thread()
+Thread(String name)
+Thread(Runnabe r)
+Thread(Runnable r,String name)
+
+Thread Schedular:
+thread schedular is th part of JVM that decides which thread should run.there is no guarntee which runnable thread will be choosen
+to run by the thread schedular.only one thread at a time can run in a single process.
+the thread schedular mainly uses preemptive or time slicing scheduling to schedule the threads.
+
+
+Sleep Method():it is used to sleep a thread specific amount of time. if you sleep a thread for the specific amount oftime ,
+the thread schedular picks up another thread and so on.
+
+sleep(long millisecond)
+sleep(long milisecond , int nano)
+
+
+Ques: Can we start a thread twice?
+No,after starting a thread we can naver be started agin.
+
+ques: if we call run method directly not the start use so what will happen?
+so the object is treatd as a normal object not a thread object.
+
+Join() Method: it is used to waits for a thread to die.
+
+
+DAEMON THREAD:
+it provides service to user thread for background supporting task.it has no role in life than to serve
+user theads.
+its life depends upon the user threads.
+its a low priority threads.
+
+
+
+
+JAVA INNER CLASSES:
+
+java inner class and nested class is a class which is declared inside the class or interface.
+
+Advantage of inner class:
+
+1.nested class represent a special type of relationship that is it can acces all the members of outer class including private.
+
+2.nested classes are used to develop more readable and maintable code becuase it logically group clases and interfaces in one place.
+
+3. code optimization:it requires less code.
+
+what is the difference between the inner class and nested class:
+inner class is the part of nested class. non static nested classes are known as inner class.
+
+Type of Inner Class:
+
+1.member inner class: a class which is created inside the class and outside the method.
+2.anonymous inner class:a class which is created for implementing interface or extend class.
+3.local inner class:a class created with in the method.
+
+
+
+ENUM:
+
+enum in java is a data type which conatins a fixed set of constraints.java eunm constraints are static and final implicitly.
+enum are used to create our own data type just like classes.
+we can define the sum inside the class or outside the class.java enum internally inherit the enum class,so it cannot inerit any other class.
+
+
+
+Enum Points:
+1.enum improves type safety.
+2.enum can be easily used in switch.3.
+3.enum can be traversed.
+4.enum can have fields,constructors and methods
+
+
+the jvm adds the values() when it creates the enum.
+
+Ques: can we create theinstance of enum by new keyword?
+No, because enum contains private constructor only.
+
+Ques: can we have an abstarct method in enum?
+Yes, of course we can have abstarct method and can provide the implemenation of these methods.
+
+
+
+GENERIC:
+
+using generic we can create a general class and method which call call using any type of data type.
+
+Advantage of Generic:
+1.Type-safety:we can hold only a single type of objects in generic.it does not allow to tore other objects.
+
+2. typecasting no need:
+
+3. Compile time checking:it is checked at a compile time so problem will not occur at runtime.
+
+
+Collection:The Collection in Java is a framework that provides an architecture to store and 
+manipulate the group of objects.Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes 
+(ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+
+What is a framework in Java:---
+It provides readymade architecture.
+It represents a set of classes and interfaces.
+It is optional.
+
+What is Collection framework:---
+The Collection framework represents a unified architecture for storing and manipulating a group of objects. It has:
+
+Interfaces and its implementations, i.e., classes
+Algorithm
+
+
+
+
+
+
+
+LAMBDA EXPRESSION:
+
+Lambda expression is a new and important feature of Java which was included in Java SE 8. 
+It provides a clear and concise way to represent one method interface using an expression. 
+It is very useful in collection library. It helps to iterate, filter and extract data from collection.
+
+
+The Lambda expression is used to provide the implementation of an interface which has functional 
+interface. It saves a lot of code. In case of lambda expression, we don't need to define the method
+again for providing the implementation. 
+
+Why use Lambda Expression:--
+To provide the implementation of Functional interface.
+Less coding.
+
+Java Lambda Expression Syntax:--
+(argument-list) -> {body}  

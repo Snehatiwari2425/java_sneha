@@ -1,0 +1,238 @@
+SERVLET:
+
+servlet is a technology which is used to develop web appliaction.Servlets are the java programs that runs 
+on the java enabled web server or application server.Servlets are used  to handle the request that obtained
+from the web server,process the request,produce response,then send response back to the server.
+
+
+PROPERTIES OF SERVLET:
+
+servlets work on the server side.
+servlets are capable of handling complex requests obtained from web server.
+
+Execution of SERVLETS:
+
+the client send request to the web server.
+the web server recieves request.
+the web server passes the request to the coreesponding servlets.
+the servlet process request and generate response in the form of output.
+the srevlet sends back the response to web server.
+the web server sends response back to the client and client browser displays it on the screen.
+
+NEED FOR SERVER SIDE EXTENSION:
+
+Server side extension are nothing but the technology that are used to create a dynamic web pages.Actually to provide 
+a facility of dynamic web pages, web pages need a container or web server.To meet this requirment,independent web server
+provide APIs.Java servlet is one of the component APIs.
+Before the servlets there are also some other Apis that is used to create web appliaction such as Common
+Gateway Interface, Hypertext Preprocessor.
+
+
+WHAT IS CGI(COMMON GATEWAY INTERFACE):
+
+CGI is an external appliaction that is written by any language. CGI is used to process request generates some output.
+in CGI some opeartions that is performed during the process request.
+
+1. it locates the requested web pages i.e the required CGI application using url.
+2. it then creates a new process to service the client's request.
+3. invoke the CGI appliaction within the process and passes the request information to the server.
+4. collects the response from the CGI appliaction.
+5. destroy the process,prepares the HTTP response and sends it to the client.
+
+As we can see that in CGI ,for every request it creates a new process or thread. so this approach is appliacble 
+for small number of request but as the number of request increases the workload on the server increases.
+and so time taken to process request increases.
+
+DIFFERENCE  BETWEEN SERVLET AND CGI:
+
+1. servlet are portable
+2. servlet can directly communicate with the web server
+3. servlet are less expensive than CGI
+4. In servlet , sharing of data is possible.
+
+
+SERVLET CLASSES AND INTERFACE:
+
+GenericServlet and HttpServlet both are classes in servlets.
+
+ADVANTAGE OF SERVLET:
+
+1. servlets are faster.because it does not involve th new process for each request.
+2. these are platfrom independent.
+3. it inherit security provided by the web server.
+
+
+SERVLET CONATINER:(servlet engine)
+
+in simple words, it is a system that manage java servlet component on the top of web server to handle the 
+web client requests.
+
+SERVICE PROVIDED BY THE SERVLET CONATINER:
+
+1.network service
+2.security service
+3.session management
+4.resource management
+5.manage servlet conatiner
+6. decode and encode MIME based mesages
+
+
+SERVLET LIFECYCLE:
+
+The web container maintains the life cycle of a servlet instance. Let's see the life cycle of the servlet:
+
+Servlet class is loaded.
+Servlet instance is created.
+init method is invoked.
+service method is invoked.
+destroy method is invoked.
+
+
+1) Servlet class is loaded
+The classloader is responsible to load the servlet class. The servlet class is loaded when the first request for the servlet is received by the web container.
+
+2) Servlet instance is created
+The web container creates the instance of a servlet after loading the servlet class. The servlet instance is created only once in the servlet life cycle.
+
+3) init method is invoked
+The web container calls the init method only once after creating the servlet instance. The init method is used to initialize the servlet. It is the life cycle method of the javax.servlet.Servlet interface. Syntax of the init method is given below:
+
+
+4) service method is invoked
+The web container calls the service method each time when request for the servlet is received. If servlet is not initialized, it follows the first three steps as described above then calls the service method. If servlet is initialized, it calls the service method. Notice that servlet is initialized only once. The syntax of the service method of the Servlet interface is given below:
+
+
+5) destroy method is invoked
+The web container calls the destroy method before removing the servlet instance from the service. It gives the servlet an opportunity to clean up any resource for example memory, thread etc. The syntax of the destroy method of the Servlet interface is given below:
+
+
+
+The servlet example can be created by three ways:
+
+By implementing Servlet interface,
+By inheriting GenericServlet class, (or)
+By inheriting HttpServlet class
+
+
+There are three ways to create the servlet.
+By implementing the Servlet interface
+By inheriting the GenericServlet class
+By inheriting the HttpServlet class
+The HttpServlet class is widely used to create the servlet because it provides methods to handle http requests such as doGet(), doPost, doHead() etc.
+In this example we are going to create a servlet that extends the HttpServlet class. In this example, we are inheriting the HttpServlet class and providing the implementation of the doGet() method. Notice that get request is the default request.
+
+
+
+3)Compile the servlet
+For compiling the Servlet, jar file is required to be loaded. Different Servers provide different jar files:
+
+Jar file	Server
+1) servlet-api.jar	Apache Tomcat
+2) weblogic.jar	Weblogic
+3) javaee.jar	Glassfish
+4) javaee.jar	JBoss
+
+
+WEB APPLIACTION:
+-------------------------->
+Java Web Application is used to create dynamic websites.
+Java provides support for web application through Servlets and JSPs. 
+We can create a website with static HTML pages but when we want information to be dynamic, we need web application.
+
+Web Server and Client:
+---------------------------------->
+Web Server is a software that can process the client request and send the response back to the client. 
+For example, Apache is one of the most widely used web servers. 
+Web Server runs on some physical machine and listens to client request on a specific port.
+A web client is a software that helps in communicating with the server.
+ Some of the most widely used web clients are Firefox, Google Chrome, Safari, etc. When we request something from the server (through URL), the web client takes care of creating a request and sending it to the server and then parsing the server response and present it to the user.
+
+
+
+
+HTML and HTTP:-
+------------------------->
+Web Server and Web Client are two separate softwares, so there should be some common language for communication. HTML is the common language between server and client and stands for HyperText Markup Language.
+
+Web server and client needs a common communication protocol, HTTP (HyperText Transfer Protocol) is the communication protocol between server and client. HTTP runs on top of TCP/IP communication protocol.
+
+Some of the important parts of the HTTP Request are:
+
+HTTP Method – action to be performed, usually GET, POST, PUT etc.
+URL – Page to access
+Form Parameters – similar to arguments in a java method, for example user,password details from login page.
+
+
+RequestDispatcher in Servlet:-
+----------------------------------------->
+
+RequestDispatcher Interface provides the facility of dispatching the request to another resource it may be html, servlet or jsp. This interface can also be used to include the content of another resource also. It is one of the way of servlet collaboration.
+
+There are two methods defined in the RequestDispatcher interface.
+
+Methods of RequestDispatcher interface:-
+forward method
+include method
+
+
+
+public void forward(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException:Forwards a request from a servlet to another resource (servlet, JSP file, or HTML file) on the server.
+public void include(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException:Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+
+
+
+
+SendRedirect in servlet:-
+---------------------------------->
+
+The sendRedirect() method of HttpServletResponse interface can be used to redirect response to 
+another resource, it may be servlet, jsp or html file.
+It accepts relative as well as absolute URL.
+It works at client side because it uses the url bar of the browser to make another request. So, it can work inside and outside the server.
+
+
+Difference between forward() and sendRedirect() method
+There are many differences between the forward() method of RequestDispatcher and sendRedirect() method of HttpServletResponse interface. They are given below:
+
+forward() method                              sendRedirect() method
+
+The forward() method works at server side.	                      The sendRedirect() method works at client side.
+It sends the same request and response objects to another servlet.	It always sends a new request.
+It can work within the server only.	                                 It can be used within and outside the server.
+Example: request.getRequestDispacher("servlet2").forward(request,response);	Example: response.sendRedirect("servlet2");
+
+
+
+
+
+Session Tracking in Servlets:-
+-------------------------------------->
+
+Session simply means a particular interval of time.
+
+Session Tracking is a way to maintain state (data) of an user. It is also known as session management in servlet.
+
+Http protocol is a stateless so we need to maintain state using session tracking techniques. Each time user requests to the server, server treats the request as the new request. So we need to maintain the state of an user to recognize to particular user.
+
+HTTP is stateless that means each request is considered as the new request. It is shown in the figure given below:
+
+
+
+3)URL Rewriting:-
+---------------------->
+In URL rewriting, we append a token or identifier to the URL of the next Servlet or the next resource. We can send parameter name/value pairs using the following format:
+
+url?name1=value1&name2=value2&??
+
+A name and a value is separated using an equal = sign, a parameter name/value pair is separated from another parameter using the ampersand(&). When the user clicks the hyperlink, the parameter name/value pairs will be passed to the server. From a Servlet, we can use getParameter() method to obtain a parameter value.
+
+
+Advantage of URL Rewriting:-
+
+It will always work whether cookie is disabled or not (browser independent).
+Extra form submission is not required on each pages.
+
+Disadvantage of URL Rewriting:-
+
+It will work only with links.
+It can send Only textual information.

@@ -1,0 +1,100 @@
+What is MVC Framework?:--->The Model-View-Controller (MVC) framework is an architectural pattern 
+                          that separates an application into three main logical components Model, View, and Controller. 
+
+
+1.MVC in JSP:--->MVC stands for Model View and Controller. 
+                It is a design pattern that separates the business logic, presentation logic and data.
+
+a.Controller :---->acts as an interface between View and Model. Controller intercepts all the incoming requests.
+
+b.Model ----------->represents the state of the application i.e. data. It can also have business logic.
+
+c.View  ----------->represents the presentaion i.e. UI(User Interface).
+
+
+
+
+HISTORY OF MVC:--->
+
+1.MVC architecture first discussed in 1979 by Trygve Reenskaug
+2.MVC model was first introduced in 1987 in the Smalltalk programming language.
+3.MVC was first time accepted as a general concept, in a 1988 article
+4.In the recent time, MVC pattern is widely used in modern web applications
+
+
+FEATURE OF MVC:->
+
+1.To design a web application architecture using the MVC pattern, it offers full control over your HTML as well as your URLs
+2.Clear separation of logic: Model, View, Controller. Separation of application tasks viz. business logic, Ul logic, and input logic.
+3.Supports for Test Driven Development (TDD)
+
+
+
+
+VIEW:-->
+A View is that part of the application that represents the presentation of data.
+Views are created by the data collected from the model data. 
+A view requests the model to give information so that it resents the output presentation to the user.
+
+
+MODEL:-->The model component stores data and its related logic.
+         It responds to the request from the views and also responds to instructions from the controller to update itself. 
+
+
+
+CONTROLLER:-->The Controller is that part of the application that handles the user interaction. The controller interprets the mouse and keyboard inputs from the user, 
+             informing model and the view to change as appropriate.A Controller send's commands to the model to update its state(E.g., Saving a specific document). The controller also sends commands to its associated 
+             view to change the view's presentation (For example scrolling a particular document).
+
+
+
+
+Popular MVC web frameworks:-->
+Here, is a list of some popular MVC frameworks:
+
+Ruby on Rails
+Django
+CakePHP
+Yii
+CherryPy
+Spring MVC
+Catalyst
+Rails
+Zend Framework
+CodeIgniter
+Laravel
+Fuel PHP
+Symphony
+
+
+
+ADVANTAGE OF MVC:-->
+Easy code maintenance easy to extend and grow
+MVC Model component can be tested separately from the user
+Easier support for new type of clients
+
+
+DISADVANTAGE OF MVC:--->
+
+Difficult to read, change, to unit test, and reuse this model
+Increased complexity and Inefficiency of data
+Increased complexity and Inefficiency of data.
+
+
+
+
+
+Object Relational Mapping:--->
+
+Object Relational Mapping (ORM) is a functionality which is used to develop and maintain a relationship between an object and relational database by mapping an object state to database column. 
+It is capable to handle various database operations easily such as inserting, updating, deleting etc.
+
+
+ORM Frameworks
+Following are the various frameworks that function on ORM mechanism: -
+
+Hibernate
+TopLink
+ORMLite
+iBATIS
+JPOX
