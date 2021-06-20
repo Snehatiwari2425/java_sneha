@@ -1,0 +1,107 @@
+Core java is a fundamental of java programming language.
+
+using core java we can develop standalone application.standalone appliactions are those application which is
+run on the single computer or device.
+there are two types of standalone application in core java which is
+a. GUI:these are those application which is not run by the command prompt.
+Example:  Calculator
+b. CUI: and these are the those appliaction which is run suing the command prompt.
+Example: normal appliaction
+
+If i have to develop web appliaction.what is web appliaction the application that uses internet is web appliaction.
+Example : facebook,google,youtube , gmail etc. so using core java we can not develop these appliaction 
+something more concept we have to need. and thats why we use advance java concept becuaseit provide us jdbc,servlet , web server
+etc.
+
+Advance java means only three technology:
+a. jdbc:it is related to java standard edition
+b. servlets: it is related to java enterprise edition
+c. jsp:-it is related to java enterprise edition
+
+
+java is divided into three parts:
+
+a.java standard edition
+b.java enterprise edition
+c.java micro edition
+
+In java basically three types of application we can develop:
+a. standalone application :by using j2se knowledge
+b. web application: by using advanced java knowledge
+c. enterprise appliaction:by using framework knowledge
+
+
+we use some architecture like 2 tier,3 tier and n tier archtecture to develop a application in java.
+
+3 tier architecure is known as MVC architecture. where M standas for Model(database programming),
+V stands for the View(client side programming,html/applet/swing/jsp),and C stands for the Controller
+(server side programming,Servelets).
+
+What is J2EE architecture?
+
+basically it uses a multi-tiered architecture
+Multi-tiered application:
+a.client tier
+n.middle tier
+c.data tier
+
+*.client makes a request to the middle tier
+*.middle tier has the business function ,handles the client requests and process it.
+*.store the application data in permanent data storage in data tier.
+*.mainly concentrate of middle tier to make enterprise appliaction easier,obus and secure.
+
+
+CLIENT TIER:
+1.acts as an front end for an application
+2.act as a user interface for appliaction.
+3.get the input from the user and then convert into requests that are forwarded to the middle tier(server).
+4.it transalte the server response into text and presented to the user.
+5.A web browser,a standalone appliaction or other servers.
+6.firewall are implemented to the client tier to secure the applications.
+
+
+
+
+MIDDLE TIER:
+1.consistes of noe or more sub tiers.
+2.it process the request,generates the response and gives it to the client tier.3.
+3. Mainly middle tier can be Application server or web server.
+4.Various containers for processing the request
+.Web container(web tier)
+. EJB container9EJB tier)
+
+Web Container:
+used for develeop web appliactions.
+provide internet functionality for J2EE appliaction.
+Components: Servlets,JSP<HTML or XML.
+
+
+EJB Conatainer:
+used for deploy business appliactions.
+Contains the collection of Enterprise Java Beans.
+It conatins business logic of appliaction.
+responsible for low level system services required to implement business logic of Enterprise Java beans
+
+System services:
+
+Resource pooling
+distributed object protocols
+Thread Management
+state management
+process management
+object persistence
+security
+deploy time configuration
+
+Example : Java mail,JMS etc.
+
+
+EIS Tier:
+
+provides a connectivity between a java EE. application and non java EE software.
+include a variety of resources
+database servers
+enterprise resource planning system.
+legacy system
+it should be the back end for the appication.
+provide flexibility to java EE developers.
