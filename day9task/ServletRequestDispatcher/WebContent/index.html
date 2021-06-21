@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title >Login Page</title>
+
+
+<style>
+
+body{
+font-family:Callibari,Helvetica,sans-sarif;
+background-color:pink;
+margin:0;
+padding:0;
+}
+
+.login{
+
+width:300px;
+overflow:hidden;
+margin:auto;
+margin: 20 0 0 450px;
+padding:80px;
+background-color:lightblue;
+border-radius:15px;
+}
+label{
+color: blue;
+font-size: 17px;
+}
+
+#Uname{
+width: 300px;
+height: 30px;
+border: none;
+border-radius: 3px;
+padding-left:8px;
+}
+
+#Pass{
+
+width:300px;
+height:30px;
+border: none;
+border-radius: 3px;
+padding-left:8px;
+}
+
+button{
+
+background-color:#4CAF50;
+width:300px;
+height:30px;
+color:white;
+padding-left: 7px;
+border:none;
+border-radius: 17px;
+
+}
+button:hover{
+
+opacity:0.8;
+}
+
+h1
+{
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Login Page</h1>
+
+
+<div class="login">
+<form action="Login" method="get">
+<label><b>Username:</b></label>
+<input type="text" name="Uname" id="Uname" required/><br><br>
+<label><b>Password:</b></label>
+<input type="password" name="Pass" id="Pass" required/><br><br>
+<button type="submit">Login</button>
+</form>
+</div>
+</body>
+</html>
