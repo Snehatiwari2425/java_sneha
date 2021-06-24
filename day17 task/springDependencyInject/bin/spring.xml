@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans   xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+               
+    <bean id="a1" class="com.depend.object.inject.Address">
+      <constructor-arg value="Kanpur"></constructor-arg>
+       <constructor-arg value="UttarPradesh"></constructor-arg>
+        <constructor-arg value="India"></constructor-arg>
+      
+      </bean>
+      
+      <bean id="hsm" class="com.depend.object.inject.Student">
+      <constructor-arg value="101" type="int"></constructor-arg>
+      <constructor-arg value="pooja"></constructor-arg>
+      <constructor-arg>
+      <ref bean="a1"/>
+      </constructor-arg>
+      </bean>
+ </beans>
